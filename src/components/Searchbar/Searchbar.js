@@ -11,11 +11,18 @@ export default class Searchbar extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state.inputData);
+    const { inputData } = this.state;
+    this.props.onSubmit(inputData);
+    this.setState({ inputData: '' });
+    this.resetForm();
+  };
+
+  resetForm = () => {
     this.setState({ inputData: '' });
   };
+
   render() {
-    const { inputData } = this.state.inputData;
+    const { inputData } = this.state;
     return (
       <header className={css.Searchbar}>
         <form className={css.SearchForm} onSubmit={this.handleSubmit}>

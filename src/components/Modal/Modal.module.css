@@ -14,5 +14,5 @@
 .Modal_content {
     display: flex;
     justify-content: center;
-    height: 600px;
+    height: 100%;
 }
